@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="IMG/Logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Cecyte</title>
+    <style>
+
+@font-face 
+        {
+            font-family:Legend ;
+            src: url(Fuentes/LeagueSpartan-VariableFont_wght.ttf);
+            
+        }
+
+        body
+        {
+            font-family: Legend;
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            overflow: visible;
+        }
+        header
+        {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: white;
+            border-bottom: 2px solid black;
+            overflow: visible;
+        }
+
+        header .letra
+        {
+            color: #474646;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: clamp(0.1em,2.5vw,2.5em);
+            font-weight: 700;
+            margin-top: 0.5%;
+            
+        }
+
+        header img
+        {
+            width: 5%;
+        }
+
+        
+        i:hover
+        {
+            cursor: pointer;
+            transition: 300ms;
+            text-shadow: 8px 8px 10px rgb(0, 0, 0);
+        }
+
+        footer
+        {
+            margin-top: 15%;
+            background: radial-gradient(circle, #5a1616, #8c3939, #6b2231);
+            height: 150px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        footer h1
+        {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: clamp(0.1em,1.5vw,1.5em);
+            font-weight: 700;
+            position: absolute;
+        }
+
+        .nav
+        {
+            position: fixed;
+            align-items: start;
+            top: 0;
+            left: 0;
+            padding-top: 1rem;
+            background: linear-gradient(#5a1616, #8c3939, #6b2231);
+            bottom: 0;
+            box-shadow: 0 0 0 100vmax rgba(0,0,0,0.5 );
+            visibility: hidden;
+            transition: transform .4s;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .nav-visible
+        {
+            visibility: visible;
+            transform: translateX(250px);
+            transition: .4s;
+        }
+        .nav-list
+        {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding-top: 4rem;
+            align-items: start;
+            transition: .4s;
+        }
+
+    .nav-list li a
+    {
+      text-decoration: none;
+      color: white;
+      font-size: clamp(0.1em,1.6vw,1.6em);
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transition: 300ms;
+      transition: .4s;
+    }
+
+    .nav-list li
+    {
+      margin-left: -35%;
+      transition: transform .4s;
+    }
+
+    .nav-list li:hover a
+    {
+        transition: .4s;
+        text-shadow: 8px 8px 10px rgb(0, 0, 0);
+    }
+
+    .abrir
+    {
+      border: 0;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      background: #6b2231;
+      text-align: left;
+      transition: 300ms all;
+      z-index: 11;
+      color: white;
+    }
+
+    .abrir:hover
+    {
+        transition: 300ms all;
+        color: black;
+    }
+
+    .cerrar
+    {
+      border: 0;
+      font-size: 1.5rem;
+      background: transparent;
+      cursor: pointer;
+      transition: 300ms;
+      color: white;
+    }
+
+    .cerrar:hover
+    {
+        transition: 300ms;
+        color: black;
+    }
+
+    .fondito
+    {
+      z-index: -5;
+      position: absolute;
+      background: #6b2231;
+      width: 100%;
+      font-size: 2.1rem;
+    }
+
+        a
+        {
+            text-decoration: none;
+            font-size: clamp(0.1em,1.5vw,1.5em);
+            color: white;
+            border-radius: 50px;
+            width: 80%;
+            transition: all 300ms;
+        }
+
+        a:hover
+        {
+            color: black;
+            transition: all 300ms;
+        }
+
+        .imagen
+        {
+            
+            width: 100%;
+        }
+
+        .rectangulo {
+            width: 60%;
+            height: 100%;
+            margin-left: 35%;
+            margin-top: -10%;
+            background: radial-gradient(circle, #5a1616, #8c3939, #6b2231);
+            border: 3px solid #b8945b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .rectangulo h3
+        {
+            text-align: center;
+            color: white;
+            font-size: clamp(0.1em,2vw,2em);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 2%;
+        }
+
+        .rectangulo h3 img
+        {
+            width: 95%;
+        }
+
+        .rectangulo h6
+        {
+            text-align: center;
+            color: white;
+            font-size: clamp(0.1em,1.5vw,1.5em);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 4%; 
+        }
+
+        form {
+            background: radial-gradient(circle, #5a1616, #8c3939, #6b2231);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            border: 3px solid #b8945b;
+            margin-top: 1%;
+            margin-left: 2%;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        form h6
+        {
+            text-align: center;
+            color: white;
+            font-size: clamp(0.1em,1.5vw,1.5em);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 4%; 
+        }
+    </style>
+</head>
+<body>
+<div class="cuerpo">
+    <header>
+        <h2 class="fondito">ㅤ</h2><button class="abrir" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+        <button id="cerrar" class="cerrar"><i class="bi bi-x-lg"></i></button>
+        <ul class="nav-list">
+        <li><a href="index.html"><i class="bi bi-house-door"></i> Inicio</i></a></li>
+        <li><a href="croquis.html"><i class="bi bi-geo-alt"></i> Croquis</a></li>
+        <li><a href="eventos.html"><i class="bi bi-megaphone"></i> Eventos</a></li>
+        <li><a href="horarios.html"><i class="bi bi-clock"></i> Horario</a></li>
+        <li><a href="informacion.html"><i class="bi bi-info-circle"></i> Información</a></li>
+        <li><a href="preguntas1.html"><i class="bi bi-question-circle"></i> Preguntas</a></li>
+        </ul>
+        </nav>
+        <h1 class="letra"><img src="IMG/Logo.png" ALIGN=LEFT>Cecyte Plantel Los Pinos</h1>     
+        </header>
+<main>
+    <form>
+        <h6>Selecciona un Grupo</h6>
+        <select id="horario">
+            <option disabled selected>Seleccionar</option>
+            <optgroup label="Primeros"></optgroup>
+            <option value="imagen1">1A</option>
+            <option value="imagen2">1B</option>
+            <option value="imagen3">1C</option>
+            <option value="imagen4">1D</option>
+            <optgroup label="Terceros"></optgroup>
+            <option value="imagen5">3APGM</option>
+            <option value="imagen6">3AMT</option>
+            <option value="imagen7">3API</option>
+            <option value="imagen8">3AMS</option>
+            <optgroup label="Quintos"></optgroup>
+            <option value="imagen9">5APGM</option>
+            <option value="imagen10">5AMT</option>
+            <option value="imagen11">5API</option>
+            <option value="imagen12">5AMUS</option>
+            <optgroup label="Asesorias"></optgroup>
+            <option value="imagen13">Asesorias</option>
+        </select>
+    </form>
+    <div class="rectangulo">
+        <img src="IMG/invisible.png" class="imagen" id="imagen">
+    </div>
+    
+</main>
+<footer><h1>©CodeCrafters <i class="bi bi-emoji-smile"></i>ㅤ|ㅤ<i class="bi bi-facebook" onclick="window.location.href='https://www.facebook.com/cecytebclospinos/'"></i>ㅤ|ㅤ<i class="bi bi-instagram" onclick="window.location.href='https://www.instagram.com/cecyte_lospinos/'"></i>ㅤ|ㅤ<i class="bi bi-gear" onclick="window.location.href='https://cecytebc.edu.mx/HA/'"></i> <br>Derechos Reservados a CECyTEBC</h1></footer>
+
+</div>
+
+<script>
+    const opciones = document.getElementById('horario');
+    const imagen = document.getElementById('imagen');
+
+    opciones.addEventListener('change', function()
+    {
+     const seleccion = opciones.value;
+     if(!opciones) 
+     {
+        imagen.style.display = 'none';
+        return;
+     }   
+
+     switch(seleccion) 
+     {
+        case 'imagen1': imagen.src = 'IMG/Horarios/1A.jpg'
+        break
+
+        case 'imagen2': imagen.src = 'IMG/Horarios/1B.jpg'
+        break
+
+        case 'imagen3': imagen.src = 'IMG/Horarios/1C.jpg'
+        break
+
+        case 'imagen4': imagen.src = 'IMG/Horarios/1D.jpg'
+        break
+
+        case 'imagen5': imagen.src = 'IMG/Horarios/3APGM.jpg'
+        break
+
+        case 'imagen6': imagen.src = 'IMG/Horarios/3AMT.jpg'
+        break
+
+        case 'imagen7': imagen.src = 'IMG/Horarios/3API.jpg'
+        break
+
+        case 'imagen8': imagen.src = 'IMG/Horarios/3AMS.jpg'
+        break
+
+        case 'imagen9': imagen.src = 'IMG/Horarios/5APGM.jpg'
+        break
+
+        case 'imagen10': imagen.src = 'IMG/Horarios/5AMT.jpg'
+        break
+
+        case 'imagen11': imagen.src = 'IMG/Horarios/5API.jpg'
+        break
+
+        case 'imagen12': imagen.src = 'IMG/Horarios/5AMUS.jpg'
+        break
+
+        case 'imagen13': imagen.src = 'IMG/Horarios/Asesorias.jpg'
+        break
+
+        default: imagen.style.display = 'none'
+        return;
+     }
+
+     imagen.style.display = 'block';
+    })
+
+    const nav = document.getElementById('nav');
+    const abrir = document.getElementById('abrir');
+    const cerrar = document.getElementById('cerrar');
+  
+    abrir.addEventListener('click', () =>{
+      nav.classList.toggle("nav-visible")
+    })
+  
+    cerrar.addEventListener('click', () =>{
+      nav.classList.remove("nav-visible")
+    })
+
+
+</script>
+
+</body>
+</html>

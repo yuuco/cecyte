@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Desplegable desde el Lado Izquierdo</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    header {
+      background-color: #333;
+      padding: 20px;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-color: transparent;
+    }
+
+    .bar {
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    /* Menú lateral */
+    .menu {
+      position: fixed; /* Lo hacemos fijo en la pantalla */
+      top: 0;
+      left: -250px; /* Colocamos el menú fuera de la vista a la izquierda */
+      width: 250px; /* Ancho del menú */
+      height: 100%; /* Ocupa toda la altura de la ventana */
+      background-color: #333;
+      flex-direction: column;
+      text-align: center;
+      transition: transform 0.3s ease-in-out; /* Animación suave para el movimiento */
+      overflow: hidden; /* Evita que el contenido se vea fuera del contenedor */
+    }
+
+    .menu.active {
+      transform: translateX(250px); /* Mueve el menú a la derecha (lo despliega) */
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 15px;
+      display: block;
+    }
+
+    .menu a:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="menu-icon" id="menu-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <!-- El menú -->
+  <nav id="menu" class="menu">
+    <a href="#home">Inicio</a>
+    <a href="#about">Acerca de</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('active'); // Toggle (alternar) la clase 'active' para abrir/cerrar el menú
+    });
+  </script>
+
+</body>
+</html>

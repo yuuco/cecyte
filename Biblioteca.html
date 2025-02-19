@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="IMG/Logo.png">
+    <title>Cecyte</title>
+    <style>
+
+@font-face 
+        {
+            font-family:Legend ;
+            src: url(Fuentes/LeagueSpartan-VariableFont_wght.ttf);
+            
+        }
+
+        body
+        {
+            font-family: Legend;
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            overflow: visible;
+        }
+        header
+        {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: white;
+            border-bottom: 2px solid black;
+            overflow: visible;
+        }
+
+        header .letra
+        {
+            color: #474646;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: clamp(0.1em,2.5vw,2.5em);
+            font-weight: 700;
+            margin-top: 0.5%;
+            
+        }
+
+        header img
+        {
+            width: 5%;
+        }
+
+        
+        i:hover
+        {
+            cursor: pointer;
+            transition: 300ms;
+            text-shadow: 8px 8px 10px rgb(0, 0, 0);
+        }
+
+        footer
+        {
+            margin-top: 15%;
+            background: radial-gradient(circle, #5a1616, #8c3939, #6b2231);
+            height: 150px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        footer h1
+        {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: clamp(0.1em,1.5vw,1.5em);
+            font-weight: 700;
+            position: absolute;
+        }
+
+        .nav
+        {
+            position: fixed;
+            align-items: start;
+            top: 0;
+            left: 0;
+            padding-top: 1rem;
+            background: linear-gradient(#5a1616, #8c3939, #6b2231);
+            bottom: 0;
+            box-shadow: 0 0 0 100vmax rgba(0,0,0,0.5 );
+            visibility: hidden;
+            transition: transform .4s;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .nav-visible
+        {
+            visibility: visible;
+            transform: translateX(250px);
+            transition: .4s;
+        }
+        .nav-list
+        {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding-top: 4rem;
+            align-items: start;
+            transition: .4s;
+        }
+
+    .nav-list li a
+    {
+      text-decoration: none;
+      color: white;
+      font-size: clamp(0.1em,1.6vw,1.6em);
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transition: 300ms;
+      transition: .4s;
+    }
+
+    .nav-list li
+    {
+      margin-left: -35%;
+      transition: transform .4s;
+    }
+
+    .nav-list li:hover a
+    {
+        transition: .4s;
+        text-shadow: 8px 8px 10px rgb(0, 0, 0);
+    }
+
+    .abrir
+    {
+      border: 0;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      background: #6b2231;
+      text-align: left;
+      transition: 300ms all;
+      z-index: 11;
+      color: white;
+    }
+
+    .abrir:hover
+    {
+        transition: 300ms all;
+        color: black;
+    }
+
+    .cerrar
+    {
+      border: 0;
+      font-size: 1.5rem;
+      background: transparent;
+      cursor: pointer;
+      transition: 300ms;
+      color: white;
+    }
+
+    .cerrar:hover
+    {
+        transition: 300ms;
+        color: black;
+    }
+
+    .fondito
+    {
+      z-index: -5;
+      position: absolute;
+      background: #6b2231;
+      width: 100%;
+      font-size: 2.1rem;
+    }
+
+    .foto
+    {
+        text-align: center;
+    }
+        
+    .rectangulo2
+    {
+        
+        background: radial-gradient(circle, #5a1616, #8c3939, #6b2231);
+        border: 3px solid #b8945b;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 50%;
+        max-height: 70dvh;
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
+        max-height: 65dvh;
+        overflow-x: hidden;
+    }
+
+    .rectangulo2 img
+    {
+        width: 60%;
+    }
+
+    .rectangulo2 h1
+    {
+        color: white;
+        font-size: clamp(0.1em,2vw,2em);
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin-top: 2%;
+    }
+
+    .rectangulo2 .imagen
+    {
+        text-align: center;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .centrar
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+
+    </style>
+</head>
+<body>
+<div class="cuerpo">
+    <header>
+        <h2 class="fondito">ㅤ</h2><button class="abrir" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+        <button id="cerrar" class="cerrar"><i class="bi bi-x-lg"></i></button>
+        <ul class="nav-list">
+        <li><a href="index.html"><i class="bi bi-house-door"></i> Inicio</i></a></li>
+        <li><a href="croquis.html"><i class="bi bi-geo-alt"></i> Croquis</a></li>
+        <li><a href="eventos.html"><i class="bi bi-megaphone"></i> Eventos</a></li>
+        <li><a href="horarios.html"><i class="bi bi-clock"></i> Horario</a></li>
+        <li><a href="informacion.html"><i class="bi bi-info-circle"></i> Información</a></li>
+        <li><a href="preguntas1.html"><i class="bi bi-question-circle"></i> Preguntas</a></li>
+        </ul>
+        </nav>
+        <h1 class="letra"><img src="IMG/Logo.png" ALIGN=LEFT>Cecyte Plantel Los Pinos</h1>     
+    </header>
+<main>
+<div class="centrar">
+    <div class="rectangulo2">
+    <h1 class="desc">La biblioteca de la preparatoria, y en el mismo edificio se encuentra la enfermeria</h1>
+    <div class="imagen"><img src="IMG/Croquis/Biblioteca.jpg"></div>
+    <div class="imagen"><img src="IMG/Croquis/Enfermeria.jpg"></div>
+    </div>
+</div>
+</main>
+<footer><h1>©CodeCrafters <i class="bi bi-emoji-smile"></i>ㅤ|ㅤ<i class="bi bi-facebook" onclick="window.location.href='https://www.facebook.com/cecytebclospinos/'"></i>ㅤ|ㅤ<i class="bi bi-instagram" onclick="window.location.href='https://www.instagram.com/cecyte_lospinos/'"></i>ㅤ|ㅤ<i class="bi bi-gear" onclick="window.location.href='https://cecytebc.edu.mx/HA/'"></i> <br>Derechos Reservados a CECyTEBC</h1></footer>
+
+</div>
+</body>
+<script>
+    const nav = document.getElementById('nav');
+    const abrir = document.getElementById('abrir');
+    const cerrar = document.getElementById('cerrar');
+  
+    abrir.addEventListener('click', () =>{
+      nav.classList.toggle("nav-visible")
+    })
+  
+    cerrar.addEventListener('click', () =>{
+      nav.classList.remove("nav-visible")
+    })
+</script>
+</html>
